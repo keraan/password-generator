@@ -1,5 +1,5 @@
 let characters = [];
-let passwordLength = 10;
+let passwordLength = document.getElementById('passwordLength').value;
 let tempPassword = '';
 let password = []
 
@@ -12,6 +12,7 @@ for (let i=33; i<127; i++) {
 
 function getRandomPassword() {
     password = []
+    document.getElementById('copiedToClipboard').textContent = ''
     for (u=0; u<4; u++) {
         for (i = 0; i < passwordLength; i++) {
             let randomCharacter = characters[Math.floor(Math.random()*characters.length)];
@@ -20,7 +21,7 @@ function getRandomPassword() {
         password.push(tempPassword);
         tempPassword = '';
     }
-    console.log(password)
+    
 }
 
 function implementPassword() {
@@ -31,6 +32,11 @@ function implementPassword() {
 }
 
 
-
-
+function copyToClipboard(password) {
+    var copyText = document.getElementById(password).innerText;
+    console.log(copyText)
+    navigator.clipboard.writeText(copyText).then(() => {
+        document.getElementById('copiedToClipboard').textContent = 'Copied to Clipboard!'
+    });
+  }
 

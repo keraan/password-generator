@@ -15,13 +15,16 @@
     <div>
         <button onclick="getRandomPassword(), implementPassword()">Generate Passwords</button>
         <label>Password Length: </label>
-        <input type="text" id="passwordLength">
+        <input type="passwordLength" id="passwordLength" name="pwd" value=10>
     </div>
     <div>
-        <button onclick="" id="passwordOne"></button> 
-        <button onclick="" id="passwordTwo"></button>
-        <button onclick="" id="passwordThree"></button>
-        <button onclick="" id="passwordFour"></button>
+        <button onclick="copyToClipboard('passwordOne')" id="passwordOne"></button> 
+        <button onclick="copyToClipboard('passwordTwo')" id="passwordTwo"></button>
+        <button onclick="copyToClipboard('passwordThree')" id="passwordThree"></button>
+        <button onclick="copyToClipboard('passwordFour')" id="passwordFour"></button>
+    </div>
+    <div>
+        <p id="copiedToClipboard"></p>
     </div>
 
 
