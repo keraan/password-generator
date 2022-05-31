@@ -15,7 +15,7 @@
     <div>
         <button onclick="getRandomPassword(), implementPassword()">Generate Passwords</button>
         <label>Password Length: </label>
-        <input type="passwordLength" id="passwordLength" name="pwd" value=10>
+        <input type="passwordLength" id="passwordLength" name="pwd" value=10 onblur="getValue()">
     </div>
     <div>
         <button onclick="copyToClipboard('passwordOne')" id="passwordOne"></button> 

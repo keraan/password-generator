@@ -5,10 +5,14 @@ let password = []
 
 let passwordOne = document.getElementById("passwordOne")
 
+
 for (let i=33; i<127; i++) {
     characters.push( String.fromCharCode(i) );
 }
 
+function getValue() {
+    passwordLength= document.querySelector('input').value;
+}
 
 function getRandomPassword() {
     password = []
@@ -34,7 +38,6 @@ function implementPassword() {
 
 function copyToClipboard(password) {
     var copyText = document.getElementById(password).innerText;
-    console.log(copyText)
     navigator.clipboard.writeText(copyText).then(() => {
         document.getElementById('copiedToClipboard').textContent = 'Copied to Clipboard!'
     });
